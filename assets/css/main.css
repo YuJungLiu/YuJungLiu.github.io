@@ -108,6 +108,17 @@ h6{
 	padding-top: 5px;
 	
 }
+h4{
+	font-size:16px;
+	font-weight:400;
+	letter-spacing: 1px;
+	color:#000;
+	letter-spacing: 0.5px;
+	text-align:left;
+	line-height:1.6em;
+	padding-top: 5px;
+	
+}
 
 
 
@@ -235,14 +246,25 @@ nav#menu #menu-nav li a:hover {
 ================================================== */
 
 /* Single Team Page */
-
+/* 
 #single-team .team-img {
-	margin-bottom: 30px;	
+	margin-bottom: 50px;	
 }
 
 #single-team .team-img img {
 	width: 100%;
-}
+} */
+
+#single-team .team-img {
+	margin-bottom: 30px;
+	text-align: center; /* Center the video horizontally */
+  }
+  
+  #single-team .team-img img{
+	max-width: 100%; /* Ensure the video does not exceed container width */
+	width: 100%;
+	height: auto;
+  }
 
 
 /* ==================================================
@@ -278,10 +300,12 @@ nav#menu #menu-nav li a:hover {
 ================================================== */
 
 footer {
-	position: relative;
-	background: transparent;	
+	position:relative;
+	background: transparent;
 	padding: 40px 0 40px;
 	margin-bottom: 0px;
+	/* display: table; */
+	/* clear: both; */
 }
 
 /* ==================================================
@@ -289,7 +313,7 @@ footer {
 ================================================== */
 
 footer.footer-widgets .widget {
-	margin-bottom: 0;	
+	margin-bottom: 0;
 }
 
 footer.footer-widgets {
