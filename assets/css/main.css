@@ -75,63 +75,59 @@ textarea::input-placeholder {
 	color: #BCBCC4;
 	opacity: 1;
 }
+hr {
+	border-top: 2px solid rgba(0,0,0,0.2);
+	text-align:center;
+	margin: 0 100px 30px 100px;
+  }
 
 /* ==================================================
    Typography
 ================================================== */
 
-h3,
-h6{
-	margin:0 0 20px 0;
+h3{
+	margin:0 0 0 0;
 	color:#000;
 	font-weight:400;
 	font-family: 'Montserrat', sans-serif;
-	line-height:1.5em;
-}
 
-h3{
+	line-height:1.5em;
 	font-size:22px;
-	color:#000;
 	letter-spacing: 0.6px;
 	text-align:center;
-	font-weight:400;
-
 }
 
+
 h6{
-	font-size:13px;
+	font-size:15px;
 	font-weight:400;
-	line-height:1em;
-	color:#B5B5B5;
+	line-height:0.8em;
+	color:#adadad;
 	text-align:center;
-	letter-spacing: 0.5px;
-	padding-top: 5px;
-	
+	letter-spacing: 0.5px
 }
 h4{
 	font-size:16px;
 	font-weight:400;
 	letter-spacing: 1px;
-	color:#000;
+	color:#131313;
 	letter-spacing: 0.5px;
 	text-align:left;
 	line-height:1.6em;
-	padding-top: 5px;
+	/* padding-top: 5px; */
 	
 }
-
-
-
-h7{
-	font-size:14px;
+h5{
+	font-size:25px;
 	font-weight:400;
-	letter-spacing: 1px;
+	/* letter-spacing: 1px; */
 	color:#000;
 	letter-spacing: 0.5px;
 	text-align:center;
-	line-height:1.6em;
-	
+	/* line-height:1.6em; */
+	/* padding-top: 5px; */
 }
+
 
 
 /* ==================================================
@@ -154,7 +150,7 @@ header {
 	height: 100px;
 	z-index: 1001;
 	padding-top:40px;
-	padding-bottom: 40px;
+	padding-bottom: 0px;
 }
 
 header #logo a {
@@ -167,7 +163,8 @@ header #logo a {
 }
 
 header #logo a:hover {
-	color: #777;	
+	color: #777;
+	border-bottom:2px solid #000;
 }
 
 
@@ -179,25 +176,25 @@ nav#menu {
 }
 
 nav#menu #menu-nav {
-	margin: 0;
+	margin:  0 ;
 	padding: 0;
+	padding-top:25px;
+
 }
 
 nav#menu #menu-nav li {
-	position: relative;	
+	position: static;	
 	list-style: none;
-	float: left;
-	padding: 0 30px;
-	
+	float: left;	
 }
 
 nav#menu #menu-nav li a {
 	color: #000;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 500;
-	line-height: 100px;
-	display: block;
+	/* line-height: 100px;  */
+	/* display: block; */
 	letter-spacing: 0.2px;
 }
 
@@ -207,6 +204,7 @@ nav#menu #menu-nav li:last-child {
 
 nav#menu #menu-nav li a:hover {
 	color: #777;
+	border-bottom:2px solid #000;
 }
 
 /* ==================================================
@@ -216,25 +214,24 @@ nav#menu #menu-nav li a:hover {
 #intro-box {
 	position: relative;
 	background:transparent;
-	padding: 60px 0 130px;
-	text-align:center;
-	
-	
+	padding: 45px 0 0px;
+	text-align:start;
+
 }
 
 #intro-box h3 {
 	color: #000;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 33px;
-    font-weight: 400;
-	line-height: 1.7;
+    font-weight: 500;
+	line-height: 1.5em;
 	letter-spacing: 0.5px;
 	text-align: start;
-	
 }
 
+
 #intro-box p {
-	text-align: start;
+	text-align: left;
 }
 
 #intro-box .center {
@@ -285,6 +282,20 @@ nav#menu #menu-nav li a:hover {
     left: 0;
   } 
 
+/* ==================================================
+   About
+================================================== */
+#about-team .team-img {
+	margin-top: 70px;
+	text-align: center; /* Center the video horizontally */
+  }  
+
+#about-team .team-img img{
+	max-width: 100%; /* Ensure the video does not exceed container width */
+	width: 50%;
+	height: auto;
+	text-align: center;
+  }
 
 /* ==================================================
    Portfolio
@@ -312,9 +323,58 @@ nav#menu #menu-nav li a:hover {
 
 .item-project:hover img,
 .item-project:active img {
-	opacity:.55
+	opacity: 0.4;
 }
 
+.image-container {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+  }
+  
+  .image-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	padding: 10px;
+	font-size: 34px;
+	/* font-weight: bold; */
+	display: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: 1; /* 使文本位于遮罩层之上 */
+  }
+  .image-text.title {
+	font-weight: bold;
+  }
+  .image-text.description {
+	top: 60%; /* Adjust the vertical position for description text */
+	font-size: 18px; /* Adjust font size for description text */
+  }
+  
+  .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 1);
+	z-index: 0; /* 遮罩层在底部 */
+	opacity: 0;
+	transition: opacity 0.3s;
+  }
+  
+  .image-container:hover .image-text {
+	display: block;
+	opacity: 1;
+  }
+  
+  .image-container:hover .overlay {
+	opacity: 1;
+  }
+  
 /* ==================================================
    cv
 ================================================== */
@@ -335,6 +395,17 @@ nav#menu #menu-nav li a:hover {
 	opacity:.55
 }
 
+
+#prize img {
+	width: relative;
+		
+}
+.prize {
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+		
+}
 /* ==================================================
    Footer
 ================================================== */
@@ -354,12 +425,12 @@ footer {
 
 footer.footer-widgets .widget {
 	margin-bottom: 0;
-	text-align: center;
+	text-align: center; 
 }
 
 footer.footer-widgets {
 	color: #777;
-	font-size: 20x;
+	font-size: 18px;
 }
 
 footer.footer-widgets a {
@@ -368,4 +439,6 @@ footer.footer-widgets a {
 
 footer.footer-widgets a:hover {
 	color: #000;
+	border-bottom:2px solid #000;
+	/* background: rgba(200,200,200,10); */
 }
