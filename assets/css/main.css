@@ -92,7 +92,7 @@ h3{
 	font-family: 'Montserrat', sans-serif;
 
 	line-height:1.5em;
-	font-size:22px;
+	font-size:20px;
 	letter-spacing: 0.6px;
 	text-align:center;
 }
@@ -326,6 +326,8 @@ nav#menu #menu-nav li a:hover {
 	opacity: 0.4;
 }
 
+
+
 .image-container {
 	position: relative;
 	display: inline-block;
@@ -374,6 +376,27 @@ nav#menu #menu-nav li a:hover {
   .image-container:hover .overlay {
 	opacity: 1;
   }
+
+  .fit-image {
+  	max-width: 100%;
+  	height: auto;
+  	display: block;
+	}
+
+.image-gallery {
+  /* 確保容器可以置中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-gallery img {
+  max-width: 100%;
+  height: auto;
+  /* 圖片之間可以加上一些間距 */
+  margin-bottom: 20px; 
+}
+
   
 /* ==================================================
    cv
